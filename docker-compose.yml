@@ -1,4 +1,13 @@
-version: "3.6"
+#Docker > 18.06.* + Compose 1.22
+#
+version: '3.7'
+
+x-logging:
+  &default-logging
+  options:
+    max-size: '10m'
+    max-file: '6'
+
 services:
   web:
     image: 'gitlab/gitlab-ce:11.4.5-ce.0'
