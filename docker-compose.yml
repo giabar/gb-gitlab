@@ -19,6 +19,9 @@ services:
       - 'gitlab-config:/etc/gitlab'
       - 'gitlab-logs:/var/log/gitlab'
       - 'gitlab-data:/var/opt/gitlab'
+    restart: unless-stopped
+    logging: *default-logging
+
 volumes:
   gitlab-config:
   gitlab-logs:
